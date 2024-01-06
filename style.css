@@ -1,7 +1,16 @@
-/* Estilos para el formulario */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+/*Estilos para formulario*/
 form {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 1rem;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -13,7 +22,7 @@ h2 {
     color: #333;
 }
 
-/* Estilos para las etiquetas y los campos de entrada */
+/* Estilos para etiquetas y campos de entrada */
 label {
     display: block;
     margin-bottom: 8px;
@@ -32,7 +41,7 @@ select {
     font-size: 16px;
 }
 
-/* Estilos para el botón de enviar */
+/* Estilos para el botón de guardar */
 input[type="submit"] {
     background-color: #4caf50;
     color: white;
@@ -47,13 +56,71 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Estilos adicionales para mejorar la apariencia */
+/* Estilos para la tabla y botones en la tabla */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td a {
+    text-decoration: none;
+    color: #000;
+}
+
+td a button {
+    background-color: #3b83bd;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+td a button:hover {
+    background-color: #2b7fb3;
+}
+
+.generate-report-button {
+    margin-bottom: 20px;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.generate-pdf{
+    background-color: #c44b3b;
+}
+.generate-xlsl{
+    background-color: #13703d;
+}
+svg{
+    margin-left: 5px;
+}
+
+.error-message {
+    color: red;
+    margin-top: -10px;
+    font-style: italic;
 }

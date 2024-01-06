@@ -18,19 +18,19 @@ ob_start();
     <title>Document</title>
 </head>
 <style>
-    /* Estilos para el contenido de la página */
-body {
+    /* Estilos para el contenido del reporte*/
+.doc-report {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
 
-h2 {
+.doc-report > h2 {
     text-align: center;
     color: #333;
 }
 
-/* Estilos para la tabla */
-table {
+/* Estilos para la tabla de informacion*/
+.table-report {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -45,9 +45,11 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
-
+.caption{
+    font-style:italic;
+}
 </style>
-<body>
+<body class='doc-report'>
     <h2>Lista de usuarios</h2>
 <?php
 $inc = include("conexion.php");
@@ -57,7 +59,7 @@ $inc = include("conexion.php");
 
         if($resultado){
             ?>
-            <table>
+            <table class='table-report'>
                 <tr>
                     <th>Nombre</th>
                     <th>Fecha de nacimiento</th>
@@ -94,7 +96,7 @@ $inc = include("conexion.php");
         <?php
         }
     ?>
-    <p>Reporte generado <?php echo $fechaActual->format('d-m-Y H:i:s');?></p>
+    <p class='caption'>Reporte generado <?php echo $fechaActual->format('d-m-Y H:i:s');?></p>
 </body>
 </html>
 <?php
@@ -112,5 +114,5 @@ $dompdf->setPaper('letter');
 
 $dompdf->render();
 
-$dompdf->stream("ListaUsuarios.pdf", array("Attachment"=> false));
+$dompdf->stream("ListaUsuarios.pdf", array("Attachment"=> true));
 ?>
